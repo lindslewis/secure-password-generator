@@ -55,10 +55,10 @@
   // note: we could also do the var here, instead of globally but would require different responses in our code than what is currently here. only add returns when you need something back from it
   // set length via prompt
   // add characters to availableCharacters via user input (there is one that allows to choose yes or no)
-  length = prompt()
-  if (length < 8) {
+  // length = prompt()
+  // if (length < 8) {
 
-  }
+  // }
   //^^^ the length and if is to make its checks, so minimum requirements of the password, in this case.
 
 
@@ -68,20 +68,14 @@ var specialChar = ["!#$%&()*+-<=>?@"]
 var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var numerics = ["0123456789"]
-var generateBtn
-// Assignment Code
-var genBtn = document.querySelector(".btn");
+var genBtn = document.getElementsByClassName(".btn")
 
-// Write password to the #password input
-function genePassword() {
-  var password = genPassword(); //this one must have a return since it is giving you a password as this is where the function is running
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+var password = genPassword() {
+    
 }
-
-// Add event listener to generate button, the writePassword is telling the click what it will do when it is clicked
+var passBox = document.getElementById("#password");
+    passBox.value = password;
 
 
 genBtn.addEventListener("click", genPassword);
