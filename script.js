@@ -1,8 +1,5 @@
 // var length = range(8, 128)
-var specialChar = ["!#$%&()*+-<=>?@"]
-var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
-var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-var numerics = ["0123456789"]
+
 
 //TODO: generate input alerts for the user to set their password parameters
 //TODO: collect the user choices (sessionStorage?)
@@ -21,39 +18,39 @@ var numerics = ["0123456789"]
 //TODO: HTML DOM events that may be good to use: reset (to restart for a new password?), click, submit??
 
 
-function generatePassword () {
-    var password = ""
+// function generatePassword () {
+//     var password = ""
 //compartmentalize as many functions as possible instead of having one function do a hundred things
 
-document.getElementsByClassName(".btn").onclick = function() {
-  var length = prompt("Password length: \n How many characters would you like to have? \n Must be between 8 and 128 characters.");
-  length = range("8, 128")
-  checkChoice(length)
-}
+// document.getElementsByClassName(".btn").onclick = function() {
+//   var length = prompt("Password length: \n How many characters would you like to have? \n Must be between 8 and 128 characters.");
+//   length = range("8, 128")
+//   checkChoice(length)
+// }
 
-function onclick() {
-var btn = document.querySelector = (".btn");
+// function onclick() {
+// var btn = document.querySelector = (".btn");
 
-}
-function defineParameters() {
-    let length = range(8, 128);
+// }
+// function defineParameters() {
+//     let length = range(8, 128);
 
-}
+// }
 
 //2. create random password from available characters
 //for loop, run number of times user sets length to
 // add random character to password string
 
 
-for (i=0; i<length; i++) {
-  // add 1 (or whatever amount) random character to password
-}
+// for (i=0; i<length; i++) {
+//   // add 1 (or whatever amount) random character to password
+// }
 
-return password
-}
+// return password
+// }
 
 
-function getParameters() {
+// function getParameters() {
 
   // note: we could also do the var here, instead of globally but would require different responses in our code than what is currently here. only add returns when you need something back from it
   // set length via prompt
@@ -63,18 +60,21 @@ function getParameters() {
 
   }
   //^^^ the length and if is to make its checks, so minimum requirements of the password, in this case.
-}
+
 
 //above is what we set up in office hours with henry, below is what was already available to us in this file.
 
-
-
+var specialChar = ["!#$%&()*+-<=>?@"]
+var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
+var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+var numerics = ["0123456789"]
+var generateBtn
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var genBtn = document.querySelector(".btn");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword(); //this one must have a return since it is giving you a password as this is where the function is running
+function genePassword() {
+  var password = genPassword(); //this one must have a return since it is giving you a password as this is where the function is running
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -82,5 +82,12 @@ function writePassword() {
 }
 
 // Add event listener to generate button, the writePassword is telling the click what it will do when it is clicked
-generateBtn.addEventListener("click", writePassword);
 
+
+genBtn.addEventListener("click", genPassword);
+
+genBtn.onclick = function genPassword() {
+  var length = prompt("Password length: \n How many characters would you like to have? \n Must be between 8 and 128 characters.");
+  length = range("8, 128")
+  checkChoice(length)
+}
