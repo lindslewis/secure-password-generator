@@ -1,16 +1,45 @@
-var length = range(8, 128)
+// var length = range(8, 128)
 var specialChar = ["!#$%&()*+-<=>?@"]
 var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+var numerics = ["0123456789"]
+
+//TODO: generate input alerts for the user to set their password parameters
+//TODO: collect the user choices (sessionStorage?)
+//TODO: edgecase-- how to approach an invalid input
+
+//1. prompt user input for the length of the password, this may be the only one that needs a true input prompt, the others may just need confirm prompts?
+//2. prompt user input for inclusion of special characters
+//3. prompt user input for inclusion of uppercase
+//4. prompt user input for inclusion of lowercase
+//5. prompt user input for the inclusionof numerics
+
+//TODO: after user input, responses need validated. and >one character type selected.
+
+//TODO: once all prompts are answered, the password should be generated (on the page). so connect the prompt pop-ups with the generate password button?
+
+//TODO: HTML DOM events that may be good to use: reset (to restart for a new password?), click, submit??
+
 
 function generatePassword () {
     var password = ""
 //compartmentalize as many functions as possible instead of having one function do a hundred things
-// 1. prompt user for parameters
-//length, special chars, numbers, uppercase, lowercase
 
+document.getElementsByClassName(".btn").onclick = function() {
+  var length = prompt("Password length: \n How many characters would you like to have? \n Must be between 8 and 128 characters.");
+  length = range("8, 128")
+  checkChoice(length)
+}
 
-getParameters();
+function onclick() {
+var btn = document.querySelector = (".btn");
+
+}
+function defineParameters() {
+    let length = range(8, 128);
+
+}
+
 //2. create random password from available characters
 //for loop, run number of times user sets length to
 // add random character to password string
