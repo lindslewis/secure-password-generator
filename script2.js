@@ -1,15 +1,28 @@
 //let's try this again...
 
-
+var genButton = document.querySelector("#generate");
+genButton.addEventListener("click", createPassword);
 // come back to meeeee
 function createPassword() {
-    var password = genPassword(genButton);
+    var password = genPassword();
     var passwordComp = document.querySelector("#password");
     passwordComp.value = password;
 }
+function genPassword() {
+    alert("Let's set some parameters on your password!")
+    return "password"
+};
 
-genButton.addEventListener("click", createPassword());
-    var genButton = document.querySelector("#generate");
+
+
+    
+
+
+
+
+
+
+
     // genButton onclick ="createPassword"
 
 
