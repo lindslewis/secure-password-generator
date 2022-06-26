@@ -2,6 +2,8 @@
 var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var specialChar = ["!@#$%^&*+=?"]
+var numerics = ["0123456789"]
+var length = range(8, 128)
 
 var genButton = document.querySelector("#generate");
 genButton.addEventListener("click", createPassword);
@@ -12,6 +14,7 @@ function createPassword() {
     passwordComp.value = password;
 }
 
+//this is the start of collecting user responses
 function genPassword() {
     let genPassword = confirm("Let's set some parameters on your password! \nFirst, would you like to have lower-case letters in your password?");
 
@@ -24,26 +27,48 @@ function genPassword() {
         let genPassword = confirm("Would you like to include upper-case letters?");
         if(genPassword){
             var compChoice = bigLetters[Math.floor(Math.random()*bigLetters.passwordComp)];
-            alert("You have chosen to include upper-case letters.");
+            alert("So far you have chosen to include upper-case letters and lower-case letters.");
 
-            //moves on to ask about special characters
+            //moves on to ask about special characters-- so far it includes upper and lower case letters
             let genPassword = confirm("Would you like to include special characters?");
             if(genPassword){
-                var compChoice = specialChar
+                var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
+                alert("So far you have chosen to include special characters, upper-case letters, and lower-case letters.");
+
+                //with the inclusion of all characters so far, now asking about numerics
+                let genPassword = confirm("Would you like to include numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+                    alert("Your password will include numbers, special characters, upper and lower-case letters.");
+
+                    //inclusion of ALL: now asking about length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        var //got too into randomizing that I cant think of how to set this
+                    }
+
+
+                //inclusion of special char, upper and lower case, but NO NUMBERS
+                }else {
+                    alert("Your password so far includes special characters, upper case, and lower case letters, but will not include numbers.");
+                }
             }
+        
         } else{
             alert("You have chosen not to include upper-case letters.")
         }
 
-    //first rejection of including lower-case
+    //rejection of including lower-case
     } else{
         alert("You have chosen not to include lower-case letters.")
 
-        //moves on to ask about upper-case letters
+        //moves on to ask about upper-case letters, does not include lower-case
         let genPassword = confirm("Would you like to include upper-case letters?");
         if(genPassword){
             var compChoice =bigLetters[Math.floor(Math.random()*bigLetters.passwordComp)];
             alert("You have chosen to include upper-case letters.");
+        } else{
+            alert("You have chosen not to include upper-case letters. You will not have any letters in your password.");
         }
     }
 }
