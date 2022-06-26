@@ -44,9 +44,9 @@ function genPassword() {
                     //inclusion of ALL: now asking about length
                     let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
                     if(genPassword){
-                         //got too into randomizing that I cant think of how to set this
+                         //for loop
                     }else {
-                        //how do i make it so that it is invalid and brings it back around?
+                        ////edgecase
                     }
 
 
@@ -91,7 +91,7 @@ function genPassword() {
                     }
                 }
             }
-        //lower no upper, no special char
+        //lower no upper, now special char
         }else {
             let genPassword = confirm("Would you like to include special characters?");
             if(genPassword){
@@ -102,10 +102,22 @@ function genPassword() {
                 if(genPassword){
                     var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
 
+                    //length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //edgecase
+                    }
+
                 //lower and special now length
                 }else {
                     let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
-                    //for loop
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //edgecase
+                    }
                 }
 
 
@@ -117,13 +129,26 @@ function genPassword() {
 
                     //lower and number, now length
                     let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
-                    //for loop
+                    if(genPassword){
+                        //for loop
+                    }else{
+                        //edgecase
+                    }
 
                 //password only contains lower
                 }else {
-                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
-                    //for loop
-
+                    let genPassword = confirm("Your password will only contain lower-case letters, is this okay?");
+                    if(genPassword){
+                        let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                            if(genPassword){
+                                //forloop
+                            }else {
+                                //edgecase
+                            }
+                    //if not okay
+                    }else {
+                        //bring back to start
+                    }
                 }
             }
         }
@@ -188,15 +213,17 @@ function genPassword() {
                         let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
                         if(genPassword){
                             //for loop
+                        }else {
+                            //edgecase
                         }
 
-                    //if invalid response
+                    //no
                     }else{
-                        //edgecase
+                        //bring back to start
                     }
                 }
             }
-        // //NO LETTERS, might ask if they're sure, will come back to this idea
+        // //NO LETTERS
         //moving on to special char
         }else {
             let genPassword = confirm("Would you like to include special characters?");
@@ -235,7 +262,11 @@ function genPassword() {
 
                     //now the length with only numbers
                     let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
-                    //for loop
+                    if(genPassword){
+                        //forloop
+                    }else {
+                        //edgecase
+                    }
 
 
                 //if they say no, take them back to the beginning
