@@ -21,30 +21,32 @@ function genPassword() {
     //first confirmation to include lower-case
     if(genPassword){
         var compChoice = smallLetters[Math.floor(Math.random()*smallLetters.passwordComp)];
-        alert("You have chosen to include lower-case letters.");
+    
 
         //moves on to ask about upper-case letters
         let genPassword = confirm("Would you like to include upper-case letters?");
         if(genPassword){
             var compChoice = bigLetters[Math.floor(Math.random()*bigLetters.passwordComp)];
-            alert("So far you have chosen to include upper-case letters and lower-case letters.");
+
 
             //moves on to ask about special characters-- so far it includes upper and lower case letters
             let genPassword = confirm("Would you like to include special characters?");
             if(genPassword){
                 var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
-                alert("So far you have chosen to include special characters, upper-case letters, and lower-case letters.");
+
 
                 //with the inclusion of all characters so far, now asking about numerics
                 let genPassword = confirm("Would you like to include numbers?");
                 if(genPassword){
                     var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
-                    alert("Your password will include numbers, special characters, upper and lower-case letters.");
+        
 
                     //inclusion of ALL: now asking about length
                     let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
                     if(genPassword){
-                        var //got too into randomizing that I cant think of how to set this
+                         //got too into randomizing that I cant think of how to set this
+                    }else {
+                        //how do i make it so that it is invalid and brings it back around?
                     }
 
 
@@ -67,6 +69,23 @@ function genPassword() {
         if(genPassword){
             var compChoice =bigLetters[Math.floor(Math.random()*bigLetters.passwordComp)];
             alert("You have chosen to include upper-case letters.");
+
+            //includes upper now asking for special char
+            let genPassword = confirm("Would you like to include special characters?");
+            if(genPassword){
+                var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
+                alert("Your password will consist of upper-case letters and special characters.");
+
+
+                //upper and special, now numbers
+                let genPassword = confirm("Would you like to include numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+                    alert("Your password ")
+                }
+            }else {
+
+            }
         } else{
             alert("You have chosen not to include upper-case letters. You will not have any letters in your password.");
         }
