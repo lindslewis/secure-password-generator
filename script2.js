@@ -3,7 +3,7 @@ var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var specialChar = ["!@#$%^&*+=?"]
 var numerics = ["0123456789"]
-var length = range(8, 128)
+// const length = range(8, 128)
 
 var genButton = document.querySelector("#generate");
 genButton.addEventListener("click", createPassword);
@@ -14,9 +14,9 @@ function createPassword() {
     passwordComp.value = password;
 }
 
-//this is the start of collecting user responses
+// //this is the start of collecting user responses
 function genPassword() {
-    let genPassword = confirm("Let's set some parameters on your password! \nFirst, would you like to have lower-case letters in your password?");
+    let genPassword = confirm("Would you like to have lower-case letters in your password?");
 
     //first confirmation to include lower-case
     if(genPassword){
@@ -50,44 +50,199 @@ function genPassword() {
                     }
 
 
-                //inclusion of special char, upper and lower case, but NO NUMBERS
+                //all but numbers, now length
                 }else {
-                    alert("Your password so far includes special characters, upper case, and lower case letters, but will not include numbers.");
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                         //for loop
+                    }else {
+                        //edgecase
+                    } 
+                }
+            
+            //letters no special char
+            }else {
+                let genPassword = confirm("Would you like to include numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+                
+                //letters with numbers, now length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //for loop, invalid response
+                    }
+                
+                //letters only
+                }else {
+                    let genPassword = confirm("Your password will only consist of letters.\nIs this okay?");
+                    if(genPassword){
+                        let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                        if(genPassword){
+                            //for loop
+                        }else {
+                            //edgecase
+                        }
+                    
+                    //if it isn't okay
+                    }else {
+                    //bring them back to the beginning
+                    }
                 }
             }
-        
-        } else{
-            alert("You have chosen not to include upper-case letters.")
+        //lower no upper, no special char
+        }else {
+            let genPassword = confirm("Would you like to include special characters?");
+            if(genPassword){
+                var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
+
+                //lower and special now number
+                let genPassword = confirm("Would you like to incude numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+
+                //lower and special now length
+                }else {
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    //for loop
+                }
+
+
+            //no special char, only lower now number
+            }else {
+                let genPassword = confirm("Would you like to incude numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+
+                    //lower and number, now length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    //for loop
+
+                //password only contains lower
+                }else {
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    //for loop
+
+                }
+            }
         }
 
-    //rejection of including lower-case
+    //NO LOWER-CASE
     } else{
-        alert("You have chosen not to include lower-case letters.")
-
         //moves on to ask about upper-case letters, does not include lower-case
         let genPassword = confirm("Would you like to include upper-case letters?");
         if(genPassword){
             var compChoice =bigLetters[Math.floor(Math.random()*bigLetters.passwordComp)];
-            alert("You have chosen to include upper-case letters.");
 
-            //includes upper now asking for special char
+            //upper and now special
             let genPassword = confirm("Would you like to include special characters?");
             if(genPassword){
                 var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
-                alert("Your password will consist of upper-case letters and special characters.");
 
 
-                //upper and special, now numbers
+                //upper,special, now numbers
                 let genPassword = confirm("Would you like to include numbers?");
                 if(genPassword){
                     var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
-                    alert("Your password ")
-                }
-            }else {
+    
 
+                    //upper,special, numbers, now length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //this will be whatever it does with the length
+                    }else {
+                        //edgecase
+                    }
+
+                //upper, special now length
+                }else {
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //edgecase
+                    }
+                }
+
+            //upper only, numbers now
+            }else {
+                let genPassword = confirm("Would you like to include numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+
+                    //uppers and num now LENGTH
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    
+                    //if invalid response
+                    }else {
+                        //edgecase
+                    }
+    
+                //only uppers    LENGTH
+                }else {
+                    let genPassword = confirm("Your password will only include upper-case letters. Is this okay?");
+                    if(genPassword){
+                        let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                        if(genPassword){
+                            //for loop
+                        }
+
+                    //if invalid response
+                    }else{
+                        //edgecase
+                    }
+                }
             }
-        } else{
-            alert("You have chosen not to include upper-case letters. You will not have any letters in your password.");
+        // //NO LETTERS, might ask if they're sure, will come back to this idea
+        //moving on to special char
+        }else {
+            let genPassword = confirm("Would you like to include special characters?");
+            if(genPassword){
+                var compChoice = specialChar[Math.floor(Math.random()*specialChar.passwordComp)];
+
+                //special char included, Numbers
+                let genPassword = confirm("Would you like to include numbers?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+
+                    //special char and numbers, now length
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //edge case
+                    }
+
+                //password only has special char, now LENGTH
+                }else {
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    if(genPassword){
+                        //for loop
+                    }else {
+                        //edge case
+                    }
+                }
+
+            //no letters, no special char
+            }else {
+                let genPassword = confirm("Without letters or special characters, your password will only consist of numbers. Is this okay?");
+                if(genPassword){
+                    var compChoice = numerics[Math.floor(Math.random()*numerics.passwordComp)];
+                    
+
+                    //now the length with only numbers
+                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                    //for loop
+
+
+                //if they say no, take them back to the beginning
+                }else {
+                    //loop back to the start
+                }
+            }
         }
     }
 }
@@ -127,4 +282,4 @@ function genPassword() {
     // genButton onclick ="createPassword"
 
 
-//to continue, I need to make sure I define genPassword()
+//to continue, I need to make sure I define genPassword
