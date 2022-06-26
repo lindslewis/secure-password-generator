@@ -71,17 +71,20 @@ var numerics = ["0123456789"]
 var genBtn = document.getElementsByClassName(".btn")
 
 
-var password = genPassword() {
-    
-}
+var password = genPassword()
 var passBox = document.getElementById("#password");
     passBox.value = password;
 
 
 genBtn.addEventListener("click", genPassword);
 
+//maybe it needs a different function first, like in the rps page. like. setting parameters before the function genpassword comes in
+function getParameters() {
+  var userInput = confirm("We need to set some parameters for your password! Please follow the following prompts!")
+}
 genBtn.onclick = function genPassword() {
   var length = prompt("Password length: \n How many characters would you like to have? \n Must be between 8 and 128 characters.");
   length = range("8, 128")
   checkChoice(length)
 }
+genPassword()
