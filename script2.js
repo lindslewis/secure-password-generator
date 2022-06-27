@@ -42,12 +42,17 @@ function genPassword() {
         
 
                     //inclusion of ALL: now asking about length
-                    let genPassword = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
-                    if(genPassword){
-                         //for loop
-                    }else {
-                        ////edgecase
+                    length = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nFor example: 12");
+                   if(length > 8 || length < 128){
+
+                   }else if(length < 8 || length > 128){
+                    // for (let i=7; i<129; i++){
+                    //     if (i < 8)
                     }
+                    
+                    // }else {
+                    //     ////edgecase
+                    // }
 
 
                 //all but numbers, now length

@@ -42,21 +42,21 @@
 // add random character to password string
 
 
-// for (i=0; i<length; i++) {
-//   // add 1 (or whatever amount) random character to password
+for (i=0; i<length; i++) {
+  add 1 (or whatever amount) random character to password
 // }
 
 // return password
 // }
 
-
+for (let i = 8; i <=128; i++)
 // function getParameters() {
 
   // note: we could also do the var here, instead of globally but would require different responses in our code than what is currently here. only add returns when you need something back from it
   // set length via prompt
   // add characters to availableCharacters via user input (there is one that allows to choose yes or no)
-  // length = prompt()
-  // if (length < 8) {
+  length = prompt()
+  if (length < 8) {
 
   // }
   //^^^ the length and if is to make its checks, so minimum requirements of the password, in this case.
