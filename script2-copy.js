@@ -2,18 +2,11 @@
 var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var specialChar = ["!@#$%^&*+=?"]
-var numerics = ["0123456789"]
-// var passwordComp = 
-// const length = range(8, 128)
+var numerics = ["0123456789"] 
 
 var genButton = document.querySelector("#generate");
 genButton.addEventListener("click", createPassword);
-// come back to meeeee
-function createPassword() {
-    var password = genPassword();
-    var passwordComp = document.querySelector("#password");
-    passwordComp.value = password;
-}
+
 
 // //this is the start of collecting user responses
 function genPassword() {
@@ -24,7 +17,6 @@ function genPassword() {
             console.log(length)
             checkChoice(length)
         }else {
-        // }else (length < 8 || length > 128)
             alert("Invalid input: Please enter an integer between 8 and 128.");
             checkChoice(length)
             genPassword()
@@ -32,7 +24,7 @@ function genPassword() {
     //input for lower-case letters
     let smallLetters = confirm("Would you like to include lower-case letters in your password?");
         if(smallLetters){
-            console.log(smallLetters)
+            console.log(smallLetters) 
         }
     
     //input for upper-case letters
@@ -52,17 +44,28 @@ function genPassword() {
         }
     }
 
-
+    //this is to check for user input validity in the above function
     function checkChoice(length){
         console.log(length)
         if(!length[0]){
-            // alert("Invalid input: Please select a number between 8 and 128.")
             return false
         }else if(length = length < 8 , length > 128){   
-            // alert("Invalid input: Please select a number between 8 and 128.")
             return false
         }
     }
+
+//need to run a loop for the number of times that the user sets their length
+//add random chars to password string-------- so take the gen password stuff and turn it into a new var called chosenChars
+//Math.floor(Math.random(chosenChars)*length.length)
+//for (i=0; i<=length.length; i++)
+    function createPassword() {
+        var password = genPassword();
+        var passwordComp = document.querySelector("#password");
+        passwordComp.value = password;
+    }
+
+ 
+    
         
 
 
