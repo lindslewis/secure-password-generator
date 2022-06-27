@@ -33,9 +33,20 @@ function genPassword() {
             console.log(smallLetters)
         }
     
+    //input for upper-case letters
     let bigLetters = confirm("Would you like to include upper-case letters in your password?");
         if(bigLetters){
             console.log(bigLetters)
+        }
+    //input for special characters
+    let specialChar = confirm("Would you like to include special characters in your password?");
+        if(specialChar){
+            console.log(specialChar)
+        }
+    //input for numbers
+    let numerics = confirm("Would you like to include numbers in your password?");
+        if(numerics){
+            console.log(numerics)
         }
     }
 
