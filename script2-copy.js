@@ -3,6 +3,8 @@ var smallLetters = ["abcdefghijklmnopqrstuvwxyz"]
 var bigLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var specialChar = ["!@#$%^&*+=?"]
 var numerics = ["0123456789"] 
+//my attempt to do the concat thing
+// var chosenChars = 
 
 var genButton = document.querySelector("#generate");
 genButton.addEventListener("click", createPassword);
@@ -22,9 +24,11 @@ function genPassword() {
             genPassword()
         }
     //input for lower-case letters
+    //concat attempt maybe local since it adds the arrays depending on if they're selected by the user?
     let smallLetters = confirm("Would you like to include lower-case letters in your password?");
         if(smallLetters){
             console.log(smallLetters) 
+            var chosenChars = 
         }
     
     //input for upper-case letters
