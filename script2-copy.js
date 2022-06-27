@@ -41,7 +41,8 @@ function genPassword() {
     let specialChar = confirm("Would you like to include special characters in your password?");
         if(specialChar){
             console.log(specialChar)
-            var chosenChars = chosenChars.concat(specialChar);
+            //don't use the var, set it to an empty array!!!!!!
+            chosenChars = chosenChars.concat(specialChar);
         }
     //input for numbers
     let numerics = confirm("Would you like to include numbers in your password?");
