@@ -46,6 +46,8 @@ function genPassword() {
                    if(length > 8 || length < 128){
 
                    }else if(length < 8 || length > 128){
+
+
                     // for (let i=7; i<129; i++){
                     //     if (i < 8)
                     }
@@ -139,7 +141,7 @@ function genPassword() {
                     }else{
                         //edgecase
                     }
-
+ 
                 //password only contains lower
                 }else {
                     let genPassword = confirm("Your password will only contain lower-case letters, is this okay?");
