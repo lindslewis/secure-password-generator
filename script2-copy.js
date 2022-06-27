@@ -20,14 +20,17 @@ function genPassword() {
 
     //setting the desired length
     let length = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nPlease use integers");
-        if (length >= 8 , length <=128){
+        do{
             console.log(length)
             checkChoice(length)
-
-        }else if (length < 8 , length > 128){
-            alert("Invalid input: Please enter an integer between 8 and 128.");
-            genPassword()
         }
+        while(length >= 8 , length <=128);
+
+        // }else if (length < 8 , length > 128){
+        //     alert("Invalid input: Please enter an integer between 8 and 128.");
+        //     checkChoice(length)
+        //     genPassword()
+        // }
     //input for lower-case letters
     let smallLetters = confirm("Would you like to include lower-case letters in your password?");
         if(smallLetters){
@@ -57,7 +60,7 @@ function genPassword() {
         if(!length[0]){
             alert("Invalid input: Please select a number between 8 and 128.")
             return false
-        }else if(length < 8 , length > 128){   
+        }else if(length = length < 8 , length > 128){   
             alert("Invalid input: Please select a number between 8 and 128.")
             return false
         }
