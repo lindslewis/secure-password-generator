@@ -28,24 +28,31 @@ function genPassword() {
     let smallLetters = confirm("Would you like to include lower-case letters in your password?");
         if(smallLetters){
             console.log(smallLetters) 
-            var chosenChars = 
+            var chosenChars = chosenChars.concat(smallLetters)
         }
     
     //input for upper-case letters
     let bigLetters = confirm("Would you like to include upper-case letters in your password?");
         if(bigLetters){
             console.log(bigLetters)
+            var chosenChars = chosenChars.concat(bigLetters)
         }
     //input for special characters
     let specialChar = confirm("Would you like to include special characters in your password?");
         if(specialChar){
             console.log(specialChar)
+            var chosenChars = chosenChars.concat(specialChar)
         }
     //input for numbers
     let numerics = confirm("Would you like to include numbers in your password?");
         if(numerics){
             console.log(numerics)
+            var chosenChars = chosenChars.concat(numerics)
         }
+    //the loop needs to happen in the gen password function, I'm assuming, since the var chosenChars is defined locally here. would randomizer go here since it is based on the loop???
+    for(i=0; i<=length.length; i++);
+        
+    
     }
 
     //this is to check for user input validity in the above function
