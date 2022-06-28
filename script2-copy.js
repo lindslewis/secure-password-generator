@@ -21,13 +21,13 @@ function genPassword() {
     //edgecasing for them not doing numbers but letters
     var characters = length.split("")
     console.log(characters)
-    var flag = true;
+    var lengthFlag = true;
         for (i=0; i<characters.length; i++){
-            if(!numbers.includes(characters[i])){
-                flag=false
+            if(!length.includes(characters[i])){
+                lengthFlag=false
             }
         }
-        if(flag == false){
+        if(lengthFlag == false){
             alert("Invalid: You did not enter a number.")
             genPassword()
         }
@@ -36,7 +36,8 @@ function genPassword() {
         if (length >= 8 && length <=128){
             console.log(length)
             checkChoice(length)
-            length = prompt()
+            chosenChars = chosenChars.concat(length);
+            console.log(chosenChars)
 
         }else {
             alert("Invalid input: Please enter an integer between 8 and 128.");
@@ -49,21 +50,23 @@ function genPassword() {
         if(smallLetters){
             console.log(smallLetters) 
             chosenChars = chosenChars.concat(smallLetters);
-            // [" "] = chosenChars.concat(smallLetters)
+            console.log(chosenChars)
         }
     
     //input for upper-case letters
     let bigLetters = confirm("Would you like to include upper-case letters in your password?");
         if(bigLetters){
             console.log(bigLetters)
-            bigLetters = confirm()
+            chosenChars = chosenChars.concat(bigLetters);
+            console.log(chosenChars)
             // var chosenChars = chosenChars.concat(bigLetters);
         }
     //input for special characters
     let specialChar = confirm("Would you like to include special characters in your password?");
         if(specialChar){
             console.log(specialChar)
-            specialChar = confirm()
+            chosenChars = chosenChars.concat(specialChar);
+            console.log(chosenChars)
             //don't use the var, set it to an empty array!!!!!!
             // chosenChars = chosenChars.concat(specialChar);
         }
@@ -71,7 +74,8 @@ function genPassword() {
     let numerics = confirm("Would you like to include numbers in your password?");
         if(numerics){
             console.log(numerics)
-            numerics = confirm()
+            chosenChars = chosenChars.concat(numerics);
+            console.log(chosenChars)
             // var chosenChars = chosenChars.concat(numerics);
         }
     //the loop needs to happen in the gen password function, I'm assuming, since the var chosenChars is defined locally here. would randomizer go here since it is based on the loop???
@@ -83,21 +87,21 @@ function genPassword() {
     }
 
     //maybe make chosenChars it's own function?, I have the returns above now, so maybe something else now?
-    const chosenChars = ["smallLetters", ]
-    function chosenChars(){
-        if(smallLetters = confirm){
-            [" "] = chosenChars.concat(smallLetters);
-        }
-        if(bigLetters = confirm){
-            [" "] = chosenChars.concat(bigLetters);
-        }
-        if(specialChar = confirm){
-            [" "] = chosenChars.concat(specialChar);
-        }
-        if(numerics = confirm){
-            [" "] = chosenChars.concat(numerics);
-        }
-    }
+    
+    // function chosenChars(){
+    //     if(smallLetters = confirm){
+    //         [] = chosenChars.concat(smallLetters);
+    //     }
+    //     if(bigLetters = confirm){
+    //         [] = chosenChars.concat(bigLetters);
+    //     }
+    //     if(specialChar = confirm){
+    //         [] = chosenChars.concat(specialChar);
+    //     }
+    //     if(numerics = confirm){
+    //         [] = chosenChars.concat(numerics);
+    //     }
+    // }
     
 
     //this is to check for user input validity in the above function
