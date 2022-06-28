@@ -6,40 +6,25 @@ var specialChar = ["!","@","#","$","%","^","&","*","+","?"]
 var numerics = ["0","1","2","3","4","5","6","7","8","9"] 
  
 //my attempt to do the concat thing
-var chosenChars = []
+let chosenChars = [];
 
 var genButton = document.querySelector("#generate");
 genButton.addEventListener("click", createPassword);
 //EDGECASE NOTE: ALWAYS BUILD IT TO WORK INITIALLY AND THEN EDGECASE
-//edgecase also for non a number (NAN)
-// //this is the start of collecting user responses
+
 function createPassword() {
     var password = genPassword();
     var passwordComp = document.querySelector("#password");
     passwordComp.value = password;
-    return password
+
 }
 
-
+// //this is the start of collecting user responses
 function genPassword() {
-
+    var password = ""
     //setting the desired length
     let length = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nPlease use integers");
-    
-    //edgecasing for them not doing numbers but letters
-    // var characters = length.split("")
-    // console.log(characters)
-    // var lengthFlag = true;
-    //     for (i=0; i<characters.length; i++){
-    //         if(!length.includes(characters[i])){
-    //             lengthFlag=false
-    //         }
-    //     }
-    //     if(lengthFlag == false){
-    //         alert("Invalid: You did not enter a number.")
-    //         genPassword()
-    //     }
-    //the above is still the edgecase
+
 
         if (length >= 8 && length <=128){
             console.log(length)
@@ -53,46 +38,40 @@ function genPassword() {
             genPassword()
         }
     //input for lower-case letters
-    //concat attempt maybe local since it adds the arrays depending on if they're selected by the user?
-    let smallLetters = confirm("Would you like to include lower-case letters in your password?");
-        if(smallLetters){
-            console.log(smallLetters);
+    //Note: I was originally just redeclaring the above vars with my chars in it, so new names for the confirmation prompts (so that's why I was getting true returned back as my password)
+    var smolBois = confirm("Would you like to include lower-case letters in your password?");
+        if(smolBois){
             chosenChars = chosenChars.concat(smallLetters);
             console.log(chosenChars);
         }
     
     //input for upper-case letters
-    let bigLetters = confirm("Would you like to include upper-case letters in your password?");
-        if(bigLetters){
-            console.log(bigLetters);
+    var bigBois = confirm("Would you like to include upper-case letters in your password?");
+        if(bigBois){
             chosenChars = chosenChars.concat(bigLetters);
             console.log(chosenChars);
         }
     //input for special characters
-    let specialChar = confirm("Would you like to include special characters in your password?");
-        if(specialChar){
-            console.log(specialChar);
+    var specialBois = confirm("Would you like to include special characters in your password?");
+        if(specialBois){
             chosenChars = chosenChars.concat(specialChar);
             console.log(chosenChars);
         }
     //input for numbers
-    let numerics = confirm("Would you like to include numbers in your password?");
-        if(numerics){
-            console.log(numerics);
+    var nums = confirm("Would you like to include numbers in your password?");
+        if(nums){
             chosenChars = chosenChars.concat(numerics);
             console.log(chosenChars);
             
         }
-        
+    //to randomize selection for password, originally had a parantheses in the wrong place, but now fixed.
         for (let i=0; i<length; i++){
-            password += chosenChars[Math.floor(Math.random(chosenChars))*chosenChars.length]
-            console.log(password)
+            password += chosenChars[Math.floor(Math.random()*chosenChars.length)];
+            console.log(password);
         }
         return(password)
-//not returning selected letters, just true however many times the length is.
-//maybe each chosen char needs to be randomized?
 
-
+//this is my edgecasing for length
     function checkChoice(length){
         console.log(length)
         if(!length[0]){
