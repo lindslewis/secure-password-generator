@@ -17,6 +17,7 @@ function createPassword() {
     var password = genPassword();
     var passwordComp = document.querySelector("#password");
     passwordComp.value = password;
+    return password
 }
 
 
@@ -55,39 +56,42 @@ function genPassword() {
     //concat attempt maybe local since it adds the arrays depending on if they're selected by the user?
     let smallLetters = confirm("Would you like to include lower-case letters in your password?");
         if(smallLetters){
-            console.log(smallLetters) 
+            console.log(smallLetters);
             chosenChars = chosenChars.concat(smallLetters);
-            console.log(chosenChars)
+            console.log(chosenChars);
         }
     
     //input for upper-case letters
     let bigLetters = confirm("Would you like to include upper-case letters in your password?");
         if(bigLetters){
-            console.log(bigLetters)
+            console.log(bigLetters);
             chosenChars = chosenChars.concat(bigLetters);
-            console.log(chosenChars)
+            console.log(chosenChars);
         }
     //input for special characters
     let specialChar = confirm("Would you like to include special characters in your password?");
         if(specialChar){
-            console.log(specialChar)
+            console.log(specialChar);
             chosenChars = chosenChars.concat(specialChar);
-            console.log(chosenChars)
+            console.log(chosenChars);
         }
     //input for numbers
     let numerics = confirm("Would you like to include numbers in your password?");
         if(numerics){
-            console.log(numerics)
+            console.log(numerics);
             chosenChars = chosenChars.concat(numerics);
-            console.log(chosenChars)
+            console.log(chosenChars);
             
         }
+        
+        for (let i=0; i<length; i++){
+            password += chosenChars[Math.floor(Math.random(chosenChars))*chosenChars.length]
+            console.log(password)
+        }
+        return(password)
 //not returning selected letters, just true however many times the length is.
 //maybe each chosen char needs to be randomized?
-    for (i=0; i<length; i++){
-        password += chosenChars[Math.floor(Math.random())*chosenChars.length]
-        console.log(password)
-    }
+
 
     function checkChoice(length){
         console.log(length)
@@ -97,7 +101,7 @@ function genPassword() {
             return false
         }
     }
-    createPassword()
+
 }
 
     //the loop needs to happen in the gen password function, I'm assuming, since the var chosenChars is defined locally here. would randomizer go here since it is based on the loop???
