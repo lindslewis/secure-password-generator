@@ -11,11 +11,8 @@ This page will allow users to select several parameters in order to create a pas
 3. [lessons-learned](##lessons-learned)
 4. [credits](##credits)
 
-The opening page:
 ![assets\images\passGen1.jpg]
-The first prompt:
 ![assets\images\passGenPrompt.jpg]
-The password output:
 ![assets\images\passGenOutput.jpg]
 
 ## usage
