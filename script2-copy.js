@@ -13,31 +13,38 @@ genButton.addEventListener("click", createPassword);
 //EDGECASE NOTE: ALWAYS BUILD IT TO WORK INITIALLY AND THEN EDGECASE
 //edgecase also for non a number (NAN)
 // //this is the start of collecting user responses
+function createPassword() {
+    var password = genPassword();
+    var passwordComp = document.querySelector("#password");
+    passwordComp.value = password;
+}
+
+
 function genPassword() {
 
     //setting the desired length
     let length = prompt("How long would you like your password to be? \nMinimum allowed: 8\nMaximum allowed: 128\nPlease use integers");
     
     //edgecasing for them not doing numbers but letters
-    var characters = length.split("")
-    console.log(characters)
-    var lengthFlag = true;
-        for (i=0; i<characters.length; i++){
-            if(!length.includes(characters[i])){
-                lengthFlag=false
-            }
-        }
-        if(lengthFlag == false){
-            alert("Invalid: You did not enter a number.")
-            genPassword()
-        }
+    // var characters = length.split("")
+    // console.log(characters)
+    // var lengthFlag = true;
+    //     for (i=0; i<characters.length; i++){
+    //         if(!length.includes(characters[i])){
+    //             lengthFlag=false
+    //         }
+    //     }
+    //     if(lengthFlag == false){
+    //         alert("Invalid: You did not enter a number.")
+    //         genPassword()
+    //     }
     //the above is still the edgecase
 
         if (length >= 8 && length <=128){
             console.log(length)
             checkChoice(length)
-            chosenChars = chosenChars.concat(length);
-            console.log(chosenChars)
+            // chosenChars = chosenChars.concat(length);
+            // console.log(chosenChars)
 
         }else {
             alert("Invalid input: Please enter an integer between 8 and 128.");
@@ -59,7 +66,6 @@ function genPassword() {
             console.log(bigLetters)
             chosenChars = chosenChars.concat(bigLetters);
             console.log(chosenChars)
-            // var chosenChars = chosenChars.concat(bigLetters);
         }
     //input for special characters
     let specialChar = confirm("Would you like to include special characters in your password?");
@@ -67,8 +73,6 @@ function genPassword() {
             console.log(specialChar)
             chosenChars = chosenChars.concat(specialChar);
             console.log(chosenChars)
-            //don't use the var, set it to an empty array!!!!!!
-            // chosenChars = chosenChars.concat(specialChar);
         }
     //input for numbers
     let numerics = confirm("Would you like to include numbers in your password?");
@@ -76,16 +80,34 @@ function genPassword() {
             console.log(numerics)
             chosenChars = chosenChars.concat(numerics);
             console.log(chosenChars)
-            // var chosenChars = chosenChars.concat(numerics);
+            
         }
+//not returning selected letters, just true however many times the length is.
+//maybe each chosen char needs to be randomized?
+    for (i=0; i<length; i++){
+        password += chosenChars[Math.floor(Math.random())*chosenChars.length]
+        console.log(password)
+    }
+
+    function checkChoice(length){
+        console.log(length)
+        if(!length[0]){
+            return false
+        }else if(length = length < 8 , length > 128){   
+            return false
+        }
+    }
+    createPassword()
+}
+
     //the loop needs to happen in the gen password function, I'm assuming, since the var chosenChars is defined locally here. would randomizer go here since it is based on the loop???
     
     
-    for(i=0; i<=length.length; i++){
-        password += chosenChars.charAt[Math.floor(Math.random(chosenChars)*length.length)]
-        }
-    }
-
+    // for(i=0; i<=length.length; i++){
+    //     password += chosenChars.charAt[Math.floor(Math.random(chosenChars)*length.length)]
+    //     }
+    // }
+  
     //maybe make chosenChars it's own function?, I have the returns above now, so maybe something else now?
     
     // function chosenChars(){
@@ -105,24 +127,12 @@ function genPassword() {
     
 
     //this is to check for user input validity in the above function
-    function checkChoice(length){
-        console.log(length)
-        if(!length[0]){
-            return false
-        }else if(length = length < 8 , length > 128){   
-            return false
-        }
-    }
 
 //need to run a loop for the number of times that the user sets their length
 //add random chars to password string-------- so take the gen password stuff and turn it into a new var called chosenChars
 //Math.floor(Math.random(chosenChars)*length.length)
 //for (i=0; i<=length.length; i++)
-    function createPassword() {
-        var password = genPassword();
-        var passwordComp = document.querySelector("#password");
-        passwordComp.value = password;
-    }
+
 
  
     
