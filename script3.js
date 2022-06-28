@@ -24,11 +24,11 @@ function genPassword() {
         console.log(passwordComp = passwordComp += bigLetters)
     }
     smallLetters = confirm("Would you like to include lower-case letters in your password?");
-    if {
-        console.log(passwordComp = passwordComp += smallLetters)
-    }
+    if 
+        (console.log(passwordComp = passwordComp += smallLetters))
+}
 
-    }
+    
     // bigLetters = confirm("Would you like to include capitalized letters in your password?");
     //     if {
     //         console.log(passwordComp = passwordComp += bigLetters)
